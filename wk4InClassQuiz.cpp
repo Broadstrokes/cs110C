@@ -34,11 +34,55 @@ ostream& operator<<(ostream& out, const Student& right) {
 }
 
 
+              ///////////
+              // Shape //
+              ///////////
+class Shape {
+  public:
+    Shape();
+    int getArea();
+  private:  
+    int area;
+    int perimeter;
+};
+
+Shape::Shape() {
+  area = 0;
+  perimeter = 0;
+};
+
+
+                //////////////
+                // Triangle //
+                //////////////
+
+class Triangle: public Shape {
+  public:
+    Triangle();
+    Triangle(int b, int h);
+    int getArea();
+  private:
+    int base;
+    int height;
+};
+
+
+Triangle::Triangle() {};
+
+Triangle::Triangle(int base, int height) {
+  this -> base = base;
+  this -> height = height;
+};
+
+int Triangle::getArea() {
+  return 0.5 * base * height;
+};
+
 
 
 
 int main() {
-  // Triangle x(2, 4);
+  Triangle x(2, 4);
   Student a("Jimmy", 30);
 
   cout << a;
