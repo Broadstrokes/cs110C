@@ -55,7 +55,6 @@ Shape::Shape() {
                 //////////////
                 // Triangle //
                 //////////////
-
 class Triangle: public Shape {
   public:
     Triangle();
@@ -80,11 +79,33 @@ int Triangle::getArea() {
 
 
 
+/////////////////////////////////////////
+// Template To Compare 2 #s or Strings //
+/////////////////////////////////////////
+
+
+template <typename T, typename V>
+bool isLessThan(const T& a, const V& b) {
+  return a < b;
+}
+
+
+// =============================== MAIN ========================
 
 int main() {
-  Triangle x(2, 4);
   Student a("Jimmy", 30);
-
   cout << a;
+
+  Triangle x(2, 4);
   cout << x.getArea() << endl;
+
+
+  cout << ("Hat" < "Cat") << endl;
+  cout << isLessThan<int>(5, 10.0) << endl;
+  cout << isLessThan<int>(10, 5) << endl;
+  cout << isLessThan<char>('h', 'a') << endl;
+  cout << isLessThan<char>('a', 'h') << endl;
+  cout << isLessThan<string>("hat", "abb") << endl;
+  cout << isLessThan<string>("abb", "hat") << endl;
+
 }
