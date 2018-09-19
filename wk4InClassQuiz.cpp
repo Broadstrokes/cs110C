@@ -97,7 +97,7 @@ bool isLessThan(const T& a, const V& b) {
 
 bool is_ascending(vector<int> inputs) {
   for (int i = 0; i < inputs.size() - 1; i++) {
-    if(inputs.at(i) > inputs.at(i + 1)) 
+    if (inputs.at(i) > inputs.at(i + 1)) 
       return false;
   }
   return true;
