@@ -71,4 +71,21 @@ T add(const T& a, const V& b) {
   return a + b;
 }
 
+int main {
 
+}
+
+
+unsigned long long factorial(int num) {
+  if (num < 0 || num > 30) {
+    cout << "Input outside range" << endl;
+    return 0;
+  } else {
+    int result = 1;
+    for(int i = 1; i <= num; i++) {
+      result = result * i;
+    }
+
+    return result;
+  }
+}
