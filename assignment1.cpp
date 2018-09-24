@@ -81,14 +81,28 @@ unsigned long long factorial(int num);
 
 
 int main() {
-  cout << "Hello World!\n";
 
+  cout << "==========================" << endl;
+  cout << "Print Table" << endl;
+  cout << "==========================" << endl;
   printTables(1, 12);
+
+  cout << "==========================" << endl;
+  cout << "All unique" << endl; 
+  cout << "==========================" << endl;
+
   cout << allUniqueCharacters("hello") << endl;
+
+  cout << "==========================" << endl;
+  cout << "Is panagram" << endl; 
+  cout << "==========================" << endl;
+  
   cout << isPanagram("The quick brown fox jumps over the lazy dog") << endl;
   cout << isPanagram("hi there") << endl;
 
-
+  cout << "==========================" << endl;
+  cout << "Rotate" << endl; 
+  cout << "==========================" << endl;
 
   int arr[] = { 1, 2, 3, 4, 5, 6};
   int size = sizeof(arr) / sizeof(arr[0]);
@@ -96,8 +110,11 @@ int main() {
   rotateLeft(arr, 2, size);
   printArray(arr, size);
 
-
   cout << endl;
+  cout << "==========================" << endl;
+  cout << "Factorial" << endl; 
+  cout << "==========================" << endl;
+  
   cout << "Factorial " << factorial(1) << endl;
   cout << "Factorial " << factorial(2) << endl;
   cout << "Factorial " << factorial(3) << endl;
@@ -109,7 +126,10 @@ int main() {
   cout << "Factorial " << factorial(40) << endl;
 
 
-
+  cout << "==========================" << endl;
+  cout << "Add" << endl; 
+  cout << "==========================" << endl;
+  
   cout << add<int>(3, 5) << endl;
   cout << add<int>(10.0, 5.0) << endl;
   cout << add<string>("hat", "abb") << endl;
@@ -132,31 +152,23 @@ unsigned long long factorial(int num) {
 }
 
 void rotateLeft(int arr[], int numRotations, int arrSize) {
-  cout << "==========================" << endl;
-  cout << "Rotate" << endl; 
-  cout << "==========================" << endl;
-
-    for (int i = 0; i < numRotations; i++) {
-      int temp = arr[0];
-      int j;
-      for (j = 0; j < arrSize - 1; j++) {
-          arr[j] = arr[j + 1];
-      }
-      arr[j] = temp;
+  for (int i = 0; i < numRotations; i++) {
+    int temp = arr[0];
+    int j;
+    for (j = 0; j < arrSize - 1; j++) {
+        arr[j] = arr[j + 1];
     }
+    arr[j] = temp;
+  }
 }
  
-void printArray(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-      cout << arr[i] << " ";
-    }
+void printArray(int arr[], int arrSize) {
+  for (int i = 0; i < arrSize; i++) {
+    cout << arr[i] << " ";
+  }
 }
 
 bool allUniqueCharacters(string str){
-  cout << "==========================" << endl;
-  cout << "All unique" << endl; 
-  cout << "==========================" << endl;
-
   cout << str.size() << endl;
   for (int i = 0; i < str.size(); i++) {
     for(int j = i+1; j < str.size(); j++) {
@@ -170,9 +182,6 @@ bool allUniqueCharacters(string str){
 }
 
 bool isPanagram(string str) {
-  cout << "==========================" << endl;
-  cout << "Is panagram" << endl; 
-  cout << "==========================" << endl;
   int len = 26;
   int idx;
   vector<bool> map(len, false);
@@ -194,10 +203,7 @@ bool isPanagram(string str) {
 }
 
 void printTables(int start, int end) {
-  int multiple;    
-  cout << "==========================" << endl;
-  cout << "Print Table" << endl;
-  cout << "==========================" << endl;
+  int multiple;
   
   for(int row = 1; row <= end; row++) {
     if (row < 10) {
