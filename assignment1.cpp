@@ -21,14 +21,10 @@ class Ellipse {
   private:
     int majorA;
     int minorB;
-    int area;
-    int perimeter;
 };
 
 
 Ellipse::Ellipse() {
-  area = 0;
-  perimeter = 0;
   majorA = 0;
   minorB = 0;
 };
@@ -83,16 +79,27 @@ unsigned long long factorial(int num);
 int main() {
 
   cout << "==========================" << endl;
+  cout << "Ellipse & Circle Classes" << endl;
+  cout << "==========================" << endl;
+  Ellipse a = Ellipse(10, 5);
+  cout << "Area of ellipse major=10, minor=5: " << a.getArea() << endl;
+  Circle b = Circle(10);
+  cout << "Area of circle with radius 10: " << b.getArea() << endl;
+
+  cout << endl;
+  cout << "==========================" << endl;
   cout << "Print Table" << endl;
   cout << "==========================" << endl;
   printTables(1, 12);
 
+  cout << endl;
   cout << "==========================" << endl;
   cout << "All unique" << endl; 
   cout << "==========================" << endl;
 
   cout << allUniqueCharacters("hello") << endl;
 
+  cout << endl;
   cout << "==========================" << endl;
   cout << "Is panagram" << endl; 
   cout << "==========================" << endl;
@@ -100,6 +107,7 @@ int main() {
   cout << isPanagram("The quick brown fox jumps over the lazy dog") << endl;
   cout << isPanagram("hi there") << endl;
 
+  cout << endl;
   cout << "==========================" << endl;
   cout << "Rotate" << endl; 
   cout << "==========================" << endl;
@@ -110,6 +118,7 @@ int main() {
   rotateLeft(arr, 2, size);
   printArray(arr, size);
 
+  cout << endl;
   cout << endl;
   cout << "==========================" << endl;
   cout << "Factorial" << endl; 
@@ -125,7 +134,7 @@ int main() {
   cout << "Factorial " << factorial(-5) << endl;
   cout << "Factorial " << factorial(40) << endl;
 
-
+  cout << endl;
   cout << "==========================" << endl;
   cout << "Add" << endl; 
   cout << "==========================" << endl;
