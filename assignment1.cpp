@@ -127,3 +127,27 @@ bool allUniqueCharacters(string str){
  
   return true;
 }
+
+bool isPanagram(string str) {
+  cout << "==========================" << endl;
+  cout << "Is panagram" << endl; 
+  cout << "==========================" << endl;
+  int len = 26;
+  int idx;
+  vector<bool> map(len, false);
+
+
+  for(int i = 0; i < str.size(); i++) {
+    if (str[i] >= 'A' && str[i] <= 'Z') { idx = str[i] - 'A'; } 
+    else if (str[i] >= 'a' && str[i] <= 'z') { idx = str[i] - 'a'; }
+
+    map[idx] = true;
+  }
+
+  for(int i = 0; i < len; i++) {
+    if (map[i] == false) {
+      return false;
+    }
+  }
+  return true;  
+}
