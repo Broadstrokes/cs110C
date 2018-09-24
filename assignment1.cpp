@@ -90,7 +90,6 @@ unsigned long long factorial(int num) {
   }
 }
 
-
 void rotateLeft(int arr[], int numRotations, int arrSize) {
   cout << "==========================" << endl;
   cout << "Rotate" << endl; 
@@ -110,4 +109,21 @@ void printArray(int arr[], int n) {
     for (int i = 0; i < n; i++) {
       cout << arr[i] << " ";
     }
+}
+
+bool allUniqueCharacters(string str){
+  cout << "==========================" << endl;
+  cout << "All unique" << endl; 
+  cout << "==========================" << endl;
+
+  cout << str.size() << endl;
+  for (int i = 0; i < str.size(); i++) {
+    for(int j = i+1; j < str.size(); j++) {
+      if(str[i] == str[j]) {
+        return false;
+      }
+    }
+  }
+ 
+  return true;
 }
