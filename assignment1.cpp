@@ -72,6 +72,53 @@ T add(const T& a, const V& b) {
 }
 
 
+void printTables(int start, int end);
+bool allUniqueCharacters(string str);
+bool isPanagram(string str);
+void rotateLeft(int arr[], int numRotations, int arrSize);
+void printArray(int arr[], int arrSize);
+unsigned long long factorial(int num);
+
+
+int main() {
+  cout << "Hello World!\n";
+
+  printTables(1, 12);
+  cout << allUniqueCharacters("hello") << endl;
+
+  cout << isPanagram("The quick brown fox jumps over the lazy dog") << endl;
+
+  cout << isPanagram("hi there") << endl;
+
+
+
+  int arr[] = { 1, 2, 3, 4, 5, 6};
+  int size = sizeof(arr) / sizeof(arr[0]);
+
+  rotateLeft(arr, 2, size);
+  printArray(arr, size);
+
+
+  cout << endl;
+  cout << "Factorial " << factorial(1) << endl;
+  cout << "Factorial " << factorial(2) << endl;
+  cout << "Factorial " << factorial(3) << endl;
+  cout << "Factorial " << factorial(4) << endl;
+  cout << "Factorial " << factorial(5) << endl;
+  cout << "Factorial " << factorial(12) << endl;
+  cout << "Factorial " << factorial(30) << endl;
+  cout << "Factorial " << factorial(-5) << endl;
+  cout << "Factorial " << factorial(40) << endl;
+
+
+
+  // cout << ("Hat" + "Cat") << endl;
+  cout << add<int>(3, 5) << endl;
+  cout << add<int>(10.0, 5.0) << endl;
+  cout << add<string>("hat", "abb") << endl;
+  cout << add<string>("abb", "hat") << endl;
+}
+
 
 unsigned long long factorial(int num) {
   if (num < 0 || num > 30) {
