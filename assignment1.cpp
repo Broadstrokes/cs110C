@@ -47,9 +47,9 @@ int Ellipse::getPerimeter() {
   return PI * (majorA + minorB) * (1 + ((3 * h) / (10 + sqrt(4 - (3 * h)))));
 };
 
-///////////
-// Circle //
-///////////
+    ///////////
+    // Circle //
+    ///////////
 class Circle: public Ellipse {
   public:
     Circle();
@@ -85,9 +85,7 @@ int main() {
 
   printTables(1, 12);
   cout << allUniqueCharacters("hello") << endl;
-
   cout << isPanagram("The quick brown fox jumps over the lazy dog") << endl;
-
   cout << isPanagram("hi there") << endl;
 
 
@@ -112,7 +110,6 @@ int main() {
 
 
 
-  // cout << ("Hat" + "Cat") << endl;
   cout << add<int>(3, 5) << endl;
   cout << add<int>(10.0, 5.0) << endl;
   cout << add<string>("hat", "abb") << endl;
