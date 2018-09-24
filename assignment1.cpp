@@ -71,9 +71,6 @@ T add(const T& a, const V& b) {
   return a + b;
 }
 
-int main {
-
-}
 
 
 unsigned long long factorial(int num) {
@@ -150,4 +147,40 @@ bool isPanagram(string str) {
     }
   }
   return true;  
+}
+
+void printTables(int start, int end) {
+  int multiple;    
+  cout << "==========================" << endl;
+  cout << "Print Table" << endl;
+  cout << "==========================" << endl;
+  
+  for(int row = 1; row <= end; row++) {
+    if (row < 10) {
+      cout << " ";
+    }
+
+    cout << row << ' ';
+    
+    for(int col  = 1; col  <= end; col ++) {
+      if (col  == 1) {
+        cout << '|';
+      }
+
+      int multiple = col * row;
+      if(multiple < 10) {
+        cout << "  ";
+      }
+      if(multiple < 100 && multiple >= 10) { 
+        cout << " ";
+      }
+      
+      cout << multiple << ' ';
+    }
+    if(row == 1) {
+      cout << endl;
+      cout << "---------------------------------------------------";
+    }
+    cout << endl;
+  }
 }
