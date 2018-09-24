@@ -58,3 +58,17 @@ class Circle: public Ellipse {
 
 Circle::Circle() { }
 Circle::Circle(int radius) : Ellipse(radius, radius) { }
+
+
+
+         /////////////////////////////////
+          // Template To Add 2 Types //
+          /////////////////////////////////
+
+
+template <typename T, typename V>
+T add(const T& a, const V& b) {
+  return a + b;
+}
+
+
