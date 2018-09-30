@@ -146,6 +146,12 @@ int main() {
 }
 
 
+/**
+ * Calculate the the factorial of integers between
+ * 0 and 30 inclusive respectively
+ * @param      num        integer 0<= num <= 30
+ * @return     long long  factorial of num
+ */
 unsigned long long factorial(int num) {
   if (num < 0 || num > 30) {
     cout << "Input outside range" << endl;
@@ -160,6 +166,13 @@ unsigned long long factorial(int num) {
   }
 }
 
+
+/**
+ * Rotates an array left by a given number of rotations
+ * @param arr          int array that needs to be rotated
+ * @param numRotations int indicating the # of left rotations 
+ * @param arrSize      int size of the give array
+ */
 void rotateLeft(int arr[], int numRotations, int arrSize) {
   for (int i = 0; i < numRotations; i++) {
     int temp = arr[0];
@@ -171,12 +184,24 @@ void rotateLeft(int arr[], int numRotations, int arrSize) {
   }
 }
  
+/**
+ * Prints a given array
+ * @param arr     int array that needs to be printed
+ * @param arrSize int size of the give array
+ */
 void printArray(int arr[], int arrSize) {
   for (int i = 0; i < arrSize; i++) {
     cout << arr[i] << " ";
   }
 }
 
+
+/**
+ * Given a string returns a boolean indicated if the string has
+ * all unique characters
+ * @param  str string to test
+ * @return     bool true indicating all characters are unquie
+ */
 bool allUniqueCharacters(string str){
   cout << str.size() << endl;
   for (int i = 0; i < str.size(); i++) {
@@ -190,6 +215,13 @@ bool allUniqueCharacters(string str){
   return true;
 }
 
+
+/**
+ * Given a string returns a boolean indicated if the string has
+ * all characters in the english alphabet i.e. it is a panagram
+ * @param  str string to test
+ * @return     bool true/false indicating the string is/not a panagram
+ */
 bool isPanagram(string str) {
   int len = 26;
   int idx;
@@ -211,6 +243,12 @@ bool isPanagram(string str) {
   return true;  
 }
 
+
+/**
+ * Prints a multiplication table for a given range
+ * @param start start of the range
+ * @param end   end of the range
+ */
 void printTables(int start, int end) {
   int multiple;
   
@@ -243,3 +281,21 @@ void printTables(int start, int end) {
     cout << endl;
   }
 }
+
+
+/*
+Sound understanding about iterators in C++ is very important as access to a
+data structure is enabled through an iterator. Learn more about C++ iterators here.
+(Links to an external site.)Links to an external site.
+
+Imagine you are writing a wrapper class to make a container out of a fixed array.
+You are doing this because you want to access every multiple of 3 elements in the array. 
+That means you want to iterate over the array in steps of 3 through a dedicated iterator.
+For example ++ would give you the next integer multiple of 3 elements.
+Your iterator should start from the beginning of the array (0 index) and ends with
+the maximum index that is a multiple of 3. 
+
+Write your wrapper class for an array size 100 and use it to write your iterator class.
+Write a driver program to print out an example array in steps of 3 using the iterator 
+you designed.
+*/
