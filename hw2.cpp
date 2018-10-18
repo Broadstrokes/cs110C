@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
+#include <math.h>       /* sqrt */
 using namespace std;
 
 int GCD(int x, int y);
 bool isPalindrome(string str);
 int powOfn(int n, double m);
+bool isPrime(int n, int count = 2);
 
 int main() {
 	cout << GCD(18, 24) << endl;	// 6
@@ -19,6 +21,18 @@ int main() {
 	cout << powOfn(2, 3) << endl;
 	cout << powOfn(2, 4) << endl;
 	cout << powOfn(2, 5) << endl;
+
+
+
+	cout << isPrime(1) << endl;
+	cout << isPrime(2) << endl;
+	cout << isPrime(3) << endl;
+	cout << isPrime(4) << endl;
+	cout << isPrime(5) << endl;
+	cout << isPrime(6) << endl;
+	cout << isPrime(7) << endl;
+	cout << isPrime(8) << endl;
+	cout << isPrime(9) << endl;
 }
 
 
@@ -38,7 +52,7 @@ bool isPalindrome(string str) {
 		return true;
 	else if (str[start] != str[end])
 		return false;
-	return isPalindrome(str.substr (1, str.size() -2));
+	return isPalindrome(str.substr(1, str.size() -2));
 }
 
 
@@ -47,4 +61,18 @@ int powOfn(int n, double m) {
   if (m == 0)
     return 1;
   return n * powOfn(n, m - 1);
+}
+
+// Q15 is prime recursive
+bool isPrime(int n, int count) {
+	if (n == 1)
+		return false;
+	else if (n == 2)
+		return true;
+	else if (n % count == 0)
+		return false;
+	else if (count > sqrt(n))
+		return true;
+
+	return isPrime(n, count + 1);
 }
