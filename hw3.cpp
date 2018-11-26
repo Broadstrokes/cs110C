@@ -42,3 +42,16 @@ inline void Randomize(){ srand(1); }  // Seed the generator
 inline int Random(int n) { return rand() % (n); }
 
 
+
+////////////////////
+// SimpleSTAT ADT //
+////////////////////
+class SimpleStat {
+	public:
+		virtual double mean() =0;
+		virtual double mode() =0;
+		virtual double median() =0;
+		virtual double standardDeviation() =0;
+};
+
+
