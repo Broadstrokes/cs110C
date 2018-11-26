@@ -360,3 +360,92 @@ class ArrayBasedSimpleStat : public SimpleStat, public AList<double> {
 			return sqrt(summationMeanSquaredDiff/length());
 		}
 };
+
+
+//////////
+// MAIN //
+//////////
+int main() {
+	cout << "Starting HW 3 Driver" << endl;	
+
+	cout << ">>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+	cout << "RUN TESTS FOR QUESTION 7" << endl;
+	cout << ">>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+	testForArrayBasedSimpleStat();
+	
+	cout << ">>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+	cout << "RUN TESTS FOR QUESTION 8" << endl;
+	cout << ">>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+	testAListSearch();
+
+
+	////////////////
+	// QUESTION 9 //
+	////////////////
+
+	/*
+		Solution:
+		1. I would use a linked list to store each digit in reverse order
+		2. Time complexity to add O(n) time 
+		3. Time complexity to multiply O(n) time 
+	 */
+
+}
+
+
+//////////
+// TEST //
+//////////
+
+void testAListSearch() {
+	AList<double> myList;
+	
+	myList.insert(100);
+	myList.insert(101);
+	myList.insert(61);
+	myList.insert(102);
+	myList.insert(82);
+	myList.insert(103);
+	myList.insert(79);
+	myList.insert(80);
+	myList.insert(77);
+	myList.insert(102);
+	myList.insert(99);
+	myList.insert(88);
+	myList.insert(92);
+	myList.insert(88);
+
+	cout << "Search for 99 using ssearch: " << myList.ssearch(99) << endl;
+	cout << "Search for 87 using ssearch: " << myList.ssearch(87) << endl;
+	cout << "Search for 99 using ibsearch: "  << myList.ibsearch(99) << endl;
+	cout << "Search for 87 using ibsearch: "  << myList.ibsearch(87) << endl;
+	cout << "Search for 99 using rbsearch: "  << myList.rbsearch(99) << endl;
+	cout << "Search for 97 using rbsearch: "  << myList.rbsearch(87) << endl;
+}
+
+void testForArrayBasedSimpleStat() {
+		ArrayBasedSimpleStat myAABST;
+		myAABST.insert(1);
+		myAABST.insert(2);
+		myAABST.insert(3);
+		myAABST.insert(4);
+		myAABST.insert(5);
+		myAABST.insert(3);
+		myAABST.insert(3);
+		myAABST.insert(3);
+		myAABST.insert(5);
+		myAABST.insert(5);
+		myAABST.insert(10);
+		myAABST.insert(20);
+		myAABST.insert(10);
+
+
+		cout << "Mean: " << myAABST.mean() << endl;
+		cout << "Standard Deviation: " << myAABST.standardDeviation() << endl;
+		cout << "Median: " << myAABST.median() << endl;
+		cout << "Mode: " << myAABST.mode() << endl;
+
+
+		Assert((myAABST.median() == 4), "median calculation failed");
+		Assert((myAABST.mode() == 3), "mode calculation failed");
+}
