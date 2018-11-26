@@ -19,7 +19,7 @@ void loopOverList(T &myList) {
 	}
 }
 
-inline bool EVEN(int x) { return (x % 2) == 0;} // Return true iff "x" is even
+inline bool EVEN(int x) { return (x % 2) == 0; } // Return true iff "x" is even
 inline bool ODD(int x) { return (x % 2) != 0; } // Return true iff "x" is odd
 
 // Assert: If "val" is false, print a message and terminate the program
@@ -217,10 +217,10 @@ public:
   	int result = -1;
 
 		for (moveToStart(); !isAtEnd(); next()) {
-  		double it = getValue();
-  		if (it == tgt) {
-  			return currPos();
-  		}
+			double it = getValue();
+			if (it == tgt) {
+				return currPos();
+			}
 		}			
 
   	return result;
