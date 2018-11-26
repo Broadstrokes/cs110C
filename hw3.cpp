@@ -270,3 +270,93 @@ public:
   }
 };
 
+
+/////////////////////////////////////////
+// ArrayBasedSimpleStat Implementation //
+/////////////////////////////////////////
+
+class ArrayBasedSimpleStat : public SimpleStat, public AList<double> {
+	public:
+		// Default constructor
+		ArrayBasedSimpleStat() {};
+		
+		double mean() {
+			double sum = 0;
+			double average;
+					
+			for (moveToStart(); !isAtEnd(); next()) {
+	  		sum += getValue();
+			}
+
+			return sum/length(); 
+		}
+
+		double median() {
+			int len = length();
+			double term1, term2;
+			double arrayToSort[len];
+			int isOdd = len % 2 != 0;
+			int middleIndex = ((len + 1) / 2) - 1;
+
+			for (moveToStart(); !isAtEnd(); next()) {
+	  		arrayToSort[currPos()] = getValue();
+			}			 	
+
+	  	int n = sizeof(arrayToSort)/sizeof(arrayToSort[0]);
+	  	sort(arrayToSort, arrayToSort + n); 
+
+
+			if (isOdd) {
+				return arrayToSort[middleIndex];
+			} else {
+				return (arrayToSort[middleIndex] + arrayToSort[middleIndex + 1]) / 2;
+			}
+		}
+
+		double mode() {
+			int maxCount = 0; 
+			double valueCorrespondingToMaxCount;
+			map<int, int> countMap;
+
+			// declaring iterators 
+			map<int, int>::iterator it;
+			map<int, int>::iterator itr;
+
+			// store count of each value in the map
+			for (moveToStart(); !isAtEnd(); next()) {
+	  		double val = getValue();
+
+	  		it = countMap.find(val);
+
+  			if (maxCount == 0) {
+  				maxCount = it->second;
+  				valueCorrespondingToMaxCount = it->first;
+  			}
+
+	  		if (it == countMap.end()) {
+	  			countMap.insert(pair <int, int> (val, 1));
+	  		} else {
+	  			it->second = it->second + 1;
+  				
+  				if (it->second > maxCount) {
+  					maxCount = it->second;
+  					valueCorrespondingToMaxCount = it->first;
+	  			}
+	  		}
+			}		
+
+			return valueCorrespondingToMaxCount;
+		}
+
+		double standardDeviation() { 
+			double summationMeanSquaredDiff;
+			double avg = this->mean();
+
+			for (moveToStart(); !isAtEnd(); next()) {
+				double it = getValue();
+	  		summationMeanSquaredDiff += (it - avg) * (it - avg);
+			}
+
+			return sqrt(summationMeanSquaredDiff/length());
+		}
+};
