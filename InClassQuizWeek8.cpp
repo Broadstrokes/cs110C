@@ -1,8 +1,4 @@
 // Solutions to the coding question of practice exam on week 8, In-Class Quiz 8
-// Please read my extensive code cooments carefully.
-// Do apolgize for my typos
-
-// By Indika Walimuni, PhD on 10/21/2018
 
 
 //#include <QCoreApplication> // a QT thing
